@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.9.6 on darwin)" generated="2025-11-22T20:53:35.674711" rpa="false" schemaversion="5">
+<suite id="s1" name="APIReqres" source="/Users/wiwinputrigulo/APIReqres">
+<suite id="s1-s1" name="Feature" source="/Users/wiwinputrigulo/APIReqres/feature.robot">
+<test id="s1-s1-t1" name="GET SINGLE USER" line="13">
+<kw name="Given User create session reqres" owner="apireqres">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-11-22T20:53:35.810841" level="INFO">Creating Session using : alias=reqres_session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres_session</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-11-22T20:53:35.810683" elapsed="0.000306"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:35.808560" elapsed="0.002526"/>
+</kw>
+<kw name="When User send GET request" owner="apireqres">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-11-22T20:53:36.130898" level="INFO">GET Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-11-22T20:53:36.132169" level="INFO">GET Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 22 Nov 2025 13:53:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'http://localhost:5173', 'Etag': 'W/"334-l4nkyILfvcYPQGUAclAvJEuZIac"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=aKDJW2kMBmaoPNTneCU%2FEwyZAFyCVmS8rEEptiB72Pg%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1763813271"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=aKDJW2kMBmaoPNTneCU%2FEwyZAFyCVmS8rEEptiB72Pg%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1763813271"', 'Server': 'cloudflare', 'Vary': 'Origin, accept-encoding', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Powered-By': 'ReqRes.in - Deploy backends in 30 seconds', 'X-Reqres-Docs': 'https://reqres.in', 'X-Reqres-Message': 'This API is powered by ReqRes. Deploy your own backend in 30 seconds!', 'X-Reqres-Templates': 'https://app.reqres.in/templates', 'X-Reqres-Upgrade': 'https://app.reqres.in/upgrade', 'X-Request-Id': '10a9147f-e23a-0b7a-2d8c-153fa0e073fa', 'X-Xss-Protection': '1; mode=block', 'Age': '6344', 'Cache-Control': 'max-age=14400', 'cf-cache-status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '9a28e9f908a7d837-SIN'} 
+ body={"data":{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."},"_meta":{"powered_by":"🚀 ReqRes - Deploy backends in 30 seconds","upgrade_url":"https://app.reqres.in/upgrade","docs_url":"https://reqres.in","template_gallery":"https://app.reqres.in/templates","message":"This API is powered by ReqRes. Deploy your own backend in 30 seconds!","features":["30 Second Backend Templates","Custom API Endpoints","Data Persistence","Real-time Analytics"],"upgrade_cta":"Upgrade to Pro for unlimited requests, custom endpoints, and data persistence"}} 
+ </msg>
+<msg time="2025-11-22T20:53:36.132843" level="INFO">/Users/wiwinputrigulo/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-11-22T20:53:36.133928" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>reqres_session</arg>
+<arg>/api/users/2</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-11-22T20:53:35.815338" elapsed="0.318902"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-11-22T20:53:36.139426" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<arg>${RESPONSE}</arg>
+<arg>${resp}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.135836" elapsed="0.004191"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:35.812889" elapsed="0.327545"/>
+</kw>
+<kw name="Then Response status code is 200" owner="apireqres">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-11-22T20:53:36.154152" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${RESPONSE.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.152951" elapsed="0.001462"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:36.147454" elapsed="0.007219"/>
+</kw>
+<tag>GET SINGLE USER</tag>
+<status status="PASS" start="2025-11-22T20:53:35.807060" elapsed="0.353230"/>
+</test>
+<test id="s1-s1-t2" name="POST CREATE USER" line="19">
+<kw name="Given User create session reqres" owner="apireqres">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-11-22T20:53:36.171017" level="INFO">Creating Session using : alias=reqres_session, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>reqres_session</arg>
+<arg>${URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-11-22T20:53:36.170670" elapsed="0.000655"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:36.166656" elapsed="0.004824"/>
+</kw>
+<kw name="When User send create user" owner="apireqres">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-11-22T20:53:36.179341" level="INFO">${body} = {'name': 'Wiwin', 'job': 'QA Automation'}</msg>
+<var>${body}</var>
+<arg>name=${USERNAME}</arg>
+<arg>job=${USER_JOB}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.178864" elapsed="0.000562"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-11-22T20:53:36.180320" level="INFO">${REQUEST_BODY} = {'name': 'Wiwin', 'job': 'QA Automation'}</msg>
+<arg>${REQUEST_BODY}</arg>
+<arg>${body}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.179606" elapsed="0.000813"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:36.175146" elapsed="0.005401"/>
+</kw>
+<kw name="And User send POST request" owner="apireqres">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-11-22T20:53:36.669370" level="INFO">POST Request : url=https://reqres.in/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '41', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Wiwin", "job": "QA Automation"}' 
+ </msg>
+<msg time="2025-11-22T20:53:36.670136" level="INFO">POST Response : url=https://reqres.in/api/users/ 
+ status=401, reason=Unauthorized 
+ headers={'Date': 'Sat, 22 Nov 2025 13:53:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Connection': 'keep-alive', 'Access-Control-Allow-Credentials': 'true', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', 'Access-Control-Allow-Origin': 'http://localhost:5173', 'Etag': 'W/"1b-FQ1mIOMgD7jlZN53VsiSdXzsYTY"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Ratelimit-Limit': '100', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Remaining': '96', 'Ratelimit-Reset': '8', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=m54XL9yttNkihsFkM49X3h%2Fm8ZtcCEkBnxEfRRkC4I8%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1763819616"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=m54XL9yttNkihsFkM49X3h%2Fm8ZtcCEkBnxEfRRkC4I8%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1763819616"', 'Server': 'cloudflare', 'Vary': 'Origin', 'Via': '1.1 heroku-router', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'X-Request-Id': '6f5cf413-488b-6e1b-b607-c22ae84d7e75', 'X-Xss-Protection': '1; mode=block', 'cf-cache-status': 'DYNAMIC', 'CF-RAY': '9a28e9fb5bc20cce-SIN'} 
+ body={"error":"Missing API key"} 
+ </msg>
+<msg time="2025-11-22T20:53:36.671152" level="INFO">/Users/wiwinputrigulo/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-11-22T20:53:36.672005" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
+<var>${resp}</var>
+<arg>reqres_session</arg>
+<arg>/api/users/</arg>
+<arg>json=${REQUEST_BODY}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.187169" elapsed="0.485046"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2025-11-22T20:53:36.676533" level="INFO">${RESPONSE} = &lt;Response [401]&gt;</msg>
+<arg>${RESPONSE}</arg>
+<arg>${resp}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.673506" elapsed="0.006108"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:36.183875" elapsed="0.497004"/>
+</kw>
+<kw name="Then Response status code is 201" owner="apireqres">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-11-22T20:53:36.697932" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${RESPONSE.status_code}</arg>
+<arg>401</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-22T20:53:36.697020" elapsed="0.001149"/>
+</kw>
+<status status="PASS" start="2025-11-22T20:53:36.689943" elapsed="0.008462"/>
+</kw>
+<tag>POST CREATE USER</tag>
+<status status="PASS" start="2025-11-22T20:53:36.163868" elapsed="0.539341"/>
+</test>
+<status status="PASS" start="2025-11-22T20:53:35.691654" elapsed="1.015242"/>
+</suite>
+<status status="PASS" start="2025-11-22T20:53:35.677031" elapsed="1.032735"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">GET SINGLE USER</stat>
+<stat pass="1" fail="0" skip="0">POST CREATE USER</stat>
+</tag>
+<suite>
+<stat name="APIReqres" id="s1" pass="2" fail="0" skip="0">APIReqres</stat>
+<stat name="Feature" id="s1-s1" pass="2" fail="0" skip="0">APIReqres.Feature</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
